@@ -35,9 +35,7 @@ class UnzipTests extends AnyFlatSpec with Matchers {
   it should "extract nested files from a zip stream" in {
     val zipBytes = new ByteArrayOutputStream()
     val zip = new ZipOutputStream(zipBytes)
-    val entries = Seq(
-      "provisioning/datasources/datasource.yml" -> "apiVersion: 1\n",
-      "dashboard.json" -> "{}\n")
+    val entries = Seq("provisioning/datasources/datasource.yml" -> "apiVersion: 1\n", "dashboard.json" -> "{}\n")
 
     entries.foreach {
       case (name, contents) =>
